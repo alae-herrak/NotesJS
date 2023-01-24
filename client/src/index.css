@@ -3,4 +3,61 @@
 *::before {
   box-sizing: border-box;
   margin: 0;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+/* navbar */
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100vw;
+  height: 60px;
+  padding: 0 32px;
+  background-color: #066951;
+}
+.logo {
+  margin-right: auto;
+  font-size: 32px;
+  font-weight: 700;
+  color: #ceeeec;
+}
+nav {
+  margin-right: 32px;
+  display: flex;
+}
+nav a {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #ceeeec;
+}
+nav a:hover {
+  background-color: #ceeeec;
+  color: #111111;
+}
+.nav-user {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: #055a45;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: 1px dashed #ceeeec;
+}
+.nav-user-name {
+  color: #ceeeec;
+}
+.nav-user button {
+  padding: 4px 8px;
+  border-radius: 5px;
+  border: 1px inset;
+}
+.nav-user button:hover {
+  cursor: pointer;
+  opacity: .85;
 }

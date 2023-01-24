@@ -1,9 +1,27 @@
-
+import { useSelector } from "react-redux";
+import { Routes, Route, Navigate } from "react-router-dom";
+import { Authentification, Home, Navbar, Settings } from "./components";
 
 const App = () => {
-  return (
-    <div>App</div>
-  )
-}
+  const user = useSelector((state) => state.user.user);
 
-export default App
+  return (
+    <>
+      <Navbar />
+      <Routes>
+        <Route
+          path="/"
+          element={user.userId === "" ? <Authentification /> : <Home />}
+        />
+        {user.userId === "" ? (
+          ""
+        ) : (
+          <Route path="/settings" element={<Settings />} />
+        )}
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </>
+  );
+};
+
+export default App;
