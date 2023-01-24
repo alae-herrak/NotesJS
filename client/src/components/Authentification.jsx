@@ -5,7 +5,6 @@ const Authentification = () => {
   return (
     <div className="auth">
       <Login />
-      <div className="auth-vertical-lign"></div>
       <Signup />
     </div>
   );
