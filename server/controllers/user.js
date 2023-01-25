@@ -58,7 +58,7 @@ export const getUserById = async (req, res) => {
 };
 export const getUserByUsername = async (req, res) => {
   try {
-    const user = await User.findOne({ 'username' : { '$regex' : req.params.username, '$options' : 'i' } });
+    const user = await User.findOne({ 'username' : { '$regex' : `^${req.params.username}$`, '$options' : 'i' } });
     res.json(user);
   } catch (error) {
     res.json({ message: error });
