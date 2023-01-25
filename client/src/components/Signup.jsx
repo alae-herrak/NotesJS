@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { createUser } from "../api/user";
+import { createUser, getUserByUsername } from "../api/user";
 import { connect } from "../redux/userSlice";
 
 const Signup = () => {
@@ -8,6 +8,7 @@ const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [passwordR, setPasswordR] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleSignup = (e) => {
     e.preventDefault();
@@ -16,29 +17,35 @@ const Signup = () => {
       password.trim() === "" ||
       passwordR.trim() === ""
     ) {
-      alert("All fields are required!");
+      setErrorMessage("All fields are required!");
     } else {
       if (password !== passwordR) {
-        alert("Passwords have to be matching!");
+        setErrorMessage("Passwords have to be matching!");
       } else {
         const user = {
           username: username,
           password: password,
           passwordR: passwordR,
         };
-        createUser(user)
-          .then((res) => {
-            dispatch(
-              connect({
-                username: res.data.username,
-                userId: res.data._id,
+        getUserByUsername(user.username).then((res) => {
+          if (!res.data) {
+            createUser(user)
+              .then((res) => {
+                dispatch(
+                  connect({
+                    username: res.data.username,
+                    userId: res.data._id,
+                  })
+                );
               })
-            );
-          })
-          .catch((err) => {
-            alert("An error has occured!");
-            console.log(err);
-          });
+              .catch((err) => {
+                alert("An error has occured!");
+                console.log(err);
+              });
+          } else {
+            setErrorMessage("Username is already taken!");
+          }
+        });
       }
     }
   };
@@ -72,6 +79,11 @@ const Signup = () => {
           }}
         />
         <button type="submit">Signup</button>
+        {errorMessage !== "" ? (
+          <div className="error-message">{errorMessage}</div>
+        ) : (
+          ""
+        )}
       </form>
     </div>
   );

@@ -125,3 +125,9 @@ nav a:hover {
   cursor: pointer;
   background-color: #034b39;
 }
+.auth-form .error-message {
+  color: #ffffff;
+  background-color: #ff00003d;
+  text-align: center;
+  padding: 16px 0;
+}
