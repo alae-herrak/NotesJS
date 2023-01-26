@@ -49,7 +49,7 @@ const Login = () => {
             setUsername(e.target.value);
           }}
         />
-        <label htmlFor="login-password">Passowrd</label>
+        <label htmlFor="login-password">Password</label>
         <input
           type="password"
           id="login-password"

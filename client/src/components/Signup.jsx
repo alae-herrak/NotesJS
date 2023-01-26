@@ -62,7 +62,7 @@ const Signup = () => {
             setUsername(e.target.value);
           }}
         />
-        <label htmlFor="signup-password">Passowrd</label>
+        <label htmlFor="signup-password">Password</label>
         <input
           type="password"
           id="signup-password"
@@ -70,7 +70,7 @@ const Signup = () => {
             setPassword(e.target.value);
           }}
         />
-        <label htmlFor="signup-passwordR">Passowrd repeat</label>
+        <label htmlFor="signup-passwordR">Password repeat</label>
         <input
           type="password"
           id="signup-passwordR"
