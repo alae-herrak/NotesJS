@@ -192,9 +192,9 @@ nav a:hover {
   border: none;
   color: #def3ed;
 }
-.settings-btns button:hover{
+.settings-btns button:hover {
   cursor: pointer;
-  opacity: .85;
+  opacity: 0.85;
 }
 .change-btn {
   background-color: #066951;
@@ -208,4 +208,27 @@ nav a:hover {
 .message {
   font-size: 13px;
   padding: 8px 4px;
+}
+.settings-password-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.settings-row {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.settings-row button {
+  width: 10%;
+  padding: 8px 0;
+  margin: 16px 30%;
+  border: none;
+  color: #def3ed;
+  background-color: #066951;
+}
+.settings-row button:hover {
+  cursor: pointer;
+  opacity: .85;
 }

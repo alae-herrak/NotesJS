@@ -14,3 +14,6 @@ export const getUserById = async (userId) => {
 export const updateUsername = async (userId, username) => {
   return await axios.patch(`${URL}/users/${userId}`, username);
 };
+export const updatePassword = async (userId, password) => {
+  return await axios.patch(`${URL}/users/${userId}`, password);
+};
