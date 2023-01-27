@@ -1,9 +1,13 @@
-
+import Notes from "./Notes";
+import NotesForm from "./NotesForm";
 
 const Home = () => {
   return (
-    <div>Home</div>
-  )
-}
+    <div className="home">
+      <Notes />
+      <NotesForm />
+    </div>
+  );
+};
 
-export default Home
+export default Home;

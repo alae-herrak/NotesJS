@@ -230,5 +230,66 @@ nav a:hover {
 }
 .settings-row button:hover {
   cursor: pointer;
-  opacity: .85;
+  opacity: 0.85;
+}
+/* home */
+.home {
+  width: 100vw;
+  height: calc(100vh -60px);
+  display: flex;
+}
+.notes {
+  width: 75%;
+}
+.notes-form {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+.notes-form-container {
+  background-color: #91d8c65b;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 32px;
+  width: 100%;
+  padding: 32px 0 64px 0;
+  border-radius: 5px;
+}
+.notes-form-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+.notes-form-form {
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  gap: 16px;
+}
+.notes-form-form input,
+.notes-form-form textarea,
+.notes-form-form button {
+  padding: 14px;
+}
+.notes-form-form textarea {
+  height: 300px;
+}
+.notes-form-form button {
+  background-color: #209c7d;
+  color: #f5fffe;
+  border: none;
+}
+.notes-form-form button:hover {
+  cursor: pointer;
+  opacity: 0.85;
+}
+.notes-form-container .error-message {
+  background-color: rgba(255, 0, 0, 0.507);
+  color: white;
+  width: 80%;
+  text-align: center;
+  padding: 14px;
+  margin: 16px 0 -16px 0;
 }

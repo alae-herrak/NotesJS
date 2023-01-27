@@ -2,6 +2,7 @@ import axios from "axios";
 
 const URL = "http://localhost:5000";
 
+// users
 export const createUser = async (user) => {
   return await axios.post(`${URL}/users`, user);
 };
@@ -16,4 +17,9 @@ export const updateUsername = async (userId, username) => {
 };
 export const updatePassword = async (userId, password) => {
   return await axios.patch(`${URL}/users/${userId}`, password);
+};
+
+// notes
+export const createNote = async (note) => {
+  return await axios.post(`${URL}/notes`, note);
 };
