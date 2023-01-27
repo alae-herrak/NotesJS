@@ -61,3 +61,12 @@ export const deleteNote = async (req, res) => {
     res.json({ message: error });
   }
 };
+
+export const deleteNotesOfUserId = async (req, res) => {
+  try {
+    const deletedNotes = await Note.deleteMany({ userId: req.params.userId });
+    res.json(deletedNotes);
+  } catch (error) {
+    res.json({ message: error });
+  }
+};
