@@ -6,6 +6,7 @@ import mongoose from "mongoose";
 import bodyParser from "body-parser";
 import cors from "cors";
 import userRouter from "./routes/user.js";
+import noteRouter from "./routes/note.js";
 
 // app setup
 const app = express();
@@ -17,6 +18,7 @@ app.use(bodyParser.json());
 
 // routes
 app.use("/users", userRouter);
+app.use("/notes", noteRouter);
 
 // DB connexion and app starting
 mongoose.set("strictQuery", false);
