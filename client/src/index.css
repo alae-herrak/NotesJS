@@ -12,6 +12,10 @@ body {
   background-attachment: fixed;
   background-size: cover;
 }
+button:hover {
+  cursor: pointer;
+  opacity: 0.85;
+}
 
 /* navbar */
 header {
@@ -63,11 +67,6 @@ nav a:hover {
   border-radius: 5px;
   border: 1px inset;
 }
-.nav-user button:hover {
-  cursor: pointer;
-  opacity: 0.85;
-}
-
 /* authentification */
 .auth {
   display: flex;
@@ -158,10 +157,7 @@ nav a:hover {
   border: none;
   color: #def3ed;
 }
-.settings-tabs button:hover {
-  cursor: pointer;
-  opacity: 0.85;
-}
+
 .settings-body {
   width: 80%;
   background-color: #d4f0e98e;
@@ -192,10 +188,7 @@ nav a:hover {
   border: none;
   color: #def3ed;
 }
-.settings-btns button:hover {
-  cursor: pointer;
-  opacity: 0.85;
-}
+
 .change-btn {
   background-color: #066951;
 }
@@ -228,10 +221,64 @@ nav a:hover {
   color: #def3ed;
   background-color: #066951;
 }
-.settings-row button:hover {
-  cursor: pointer;
-  opacity: 0.85;
+.settings-account-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
+.settings-account-row {
+  display: flex;
+  flex-direction: column;
+}
+.settings-account-row > button {
+  width: 160px;
+  padding: 8px 12px;
+  background-color: #ee4343;
+  color: #ffffff;
+  border: none;
+  font-weight: bold;
+}
+.deleteNotes,
+.deleteAccount {
+  display: flex;
+  flex-direction: column;
+  margin: 16px 0;
+  gap: 8px;
+}
+.deleteInfo {
+  font-weight: bold;
+}
+#deleteAllNotes,
+#deleteAccount {
+  width: 160px;
+  text-align: center;
+  padding: 8px;
+}
+.deleteNotes-btns,
+.deleteAccount-btns {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+}
+.deleteNotes-btns button,
+.deleteAccount-btns button {
+  padding: 5px 18px;
+  color: #eeeeee;
+  border: none;
+}
+.deleteNotes-btns button:first-child,
+.deleteAccount-btns button:first-child {
+  background-color: #ff0000;
+}
+.deleteNotes-btns button:disabled,
+.deleteAccount-btns button:disabled {
+  background-color: #ff000054;
+}
+.deleteNotes-btns button:last-child,
+.deleteAccount-btns button:last-child {
+  background-color: #aaaaaa;
+}
+
 /* home */
 .home {
   width: 100vw;
@@ -280,10 +327,6 @@ nav a:hover {
   background-color: #209c7d;
   color: #f5fffe;
   border: none;
-}
-.notes-form-form button:hover {
-  cursor: pointer;
-  opacity: 0.85;
 }
 .notes-form-container .error-message {
   background-color: rgba(255, 0, 0, 0.507);
