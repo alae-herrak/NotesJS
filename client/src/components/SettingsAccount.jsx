@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { deleteNotesOfUserId, deleteUser } from "../api/user";
+import { deleteNotesOfUserId, deleteUser } from "../api/requests";
 import { Navigate } from "react-router-dom";
 import { disconnect } from "../redux/userSlice";
 

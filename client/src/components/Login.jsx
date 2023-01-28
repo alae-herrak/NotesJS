@@ -1,10 +1,12 @@
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { connect } from "../redux/userSlice";
-import { getUserByUsername } from "../api/user";
+import { addNote } from "../redux/notesSlice";
+import { getNotesOfUserId, getUserByUsername } from "../api/requests";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const notes = useSelector((state) => state.notes.notes);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
@@ -25,6 +27,9 @@ const Login = () => {
           if (password !== res.data.password) {
             setErrorMessage("The password you provided is incorrect!");
           } else {
+            getNotesOfUserId(res.data._id).then((res) => {
+              res.data.map((note) => dispatch(addNote(note)));
+            });
             dispatch(
               connect({
                 username: res.data.username,

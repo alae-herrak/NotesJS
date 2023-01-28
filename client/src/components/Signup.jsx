@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { useState } from "react";
-import { createUser, getUserByUsername } from "../api/user";
+import { createUser, getUserByUsername } from "../api/requests";
 import { connect } from "../redux/userSlice";
 
 const Signup = () => {

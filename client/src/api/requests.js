@@ -29,3 +29,6 @@ export const createNote = async (note) => {
 export const deleteNotesOfUserId = async (userId) => {
   return await axios.delete(`${URL}/notes/delete/user/${userId}`);
 };
+export const getNotesOfUserId = async (userId) => {
+  return await axios.get(`${URL}/notes/user/${userId}`);
+};

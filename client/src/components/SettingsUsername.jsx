@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { getUserByUsername, updateUsername } from "../api/user";
+import { getUserByUsername, updateUsername } from "../api/requests";
 import { disconnect } from "../redux/userSlice";
 
 const SettingsUsername = () => {

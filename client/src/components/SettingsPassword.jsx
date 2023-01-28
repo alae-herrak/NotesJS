@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getUserById, updatePassword } from "../api/user";
+import { getUserById, updatePassword } from "../api/requests";
 import { disconnect } from "../redux/userSlice";
 
 const SettingsPassword = () => {

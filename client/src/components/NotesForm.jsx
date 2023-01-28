@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { createNote } from "../api/user";
+import { createNote } from "../api/requests";
 
 const NotesForm = () => {
   const user = useSelector((state) => state.user.user);
