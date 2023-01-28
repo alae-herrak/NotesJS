@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { disconnect } from "../redux/userSlice";
+import { resetNotes } from "../redux/notesSlice";
 
 const Navbar = () => {
   const user = useSelector((state) => state.user.user);
@@ -19,7 +20,14 @@ const Navbar = () => {
           </nav>
           <div className="nav-user">
             <div className="nav-user-name">{user.username}</div>
-            <button onClick={() => dispatch(disconnect())}>Diconnect</button>
+            <button
+              onClick={() => {
+                dispatch(disconnect());
+                dispatch(resetNotes());
+              }}
+            >
+              Diconnect
+            </button>
           </div>{" "}
         </>
       )}

@@ -10,8 +10,11 @@ const notesSlice = createSlice({
     addNote: (state, action) => {
       state.notes = [action.payload, ...state.notes];
     },
+    resetNotes: (state, action) => {
+      state.notes = [];
+    },
   },
 });
 
 export default notesSlice.reducer;
-export const { addNote } = notesSlice.actions;
+export const { addNote, resetNotes } = notesSlice.actions;
