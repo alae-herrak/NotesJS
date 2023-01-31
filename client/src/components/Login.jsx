@@ -44,7 +44,7 @@ const Login = () => {
 
   return (
     <div className="login">
-      <div className="auth-title">Login</div>
+      <div className="auth-title">Log In</div>
       <form className="auth-form" onSubmit={handleLogin}>
         <label htmlFor="login-username">Username</label>
         <input
@@ -62,7 +62,7 @@ const Login = () => {
             setPassword(e.target.value);
           }}
         />
-        <button>Login</button>
+        <button>Log In</button>
         {errorMessage !== "" ? (
           <div className="error-message">{errorMessage}</div>
         ) : (

@@ -72,10 +72,25 @@ nav a:hover {
   display: flex;
   width: 100vw;
   height: calc(100vh - 60px);
+  justify-content: center;
+}
+.auth-switch {
+  position: absolute;
+  bottom: 5%;
+  background-color: #7cac8e73;
+  padding: 10px 40px;
+  border-radius: 5px;
+  color: #b8f0d1;
+}
+.auth-switch a {
+  font-weight: bold;
+}
+.auth-switch a:hover{
+  cursor: pointer;
+  color: #034b39;
 }
 .login,
 .signup {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,6 +100,7 @@ nav a:hover {
   background-color: #06695136;
   color: rgb(0, 70, 48);
   border-radius: 10px;
+  width: 30%;
 }
 .auth-title {
   font-size: 28px;
