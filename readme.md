@@ -22,6 +22,7 @@ after cloning the repo run:
 
 `npm start`
 
+in another terminal run:
 
 `cd client`
 
