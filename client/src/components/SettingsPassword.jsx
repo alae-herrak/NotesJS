@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getUserById, updatePassword } from "../api/requests";
+import { resetNotes } from "../redux/notesSlice";
 import { disconnect } from "../redux/userSlice";
 
 const SettingsPassword = () => {
@@ -33,6 +34,7 @@ const SettingsPassword = () => {
               password: password,
             }).then(() => {
               alert("Please login again");
+              dispatch(resetNotes())
               dispatch(disconnect());
             });
           }

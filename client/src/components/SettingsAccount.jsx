@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { deleteNotesOfUserId, deleteUser } from "../api/requests";
 import { Navigate } from "react-router-dom";
 import { disconnect } from "../redux/userSlice";
+import { resetNotes } from "../redux/notesSlice";
 
 const SettingsAccount = () => {
   const dispatch = useDispatch();
@@ -16,11 +17,12 @@ const SettingsAccount = () => {
   const handleDeleteAllNote = () => {
     if (canDeleteNotes) {
       const confirmation = confirm(
-        "Are you sure you want to delete all your notes?"
+        "Are you sure you want to permanently delete all your notes?"
       );
       if (confirmation) {
         deleteNotesOfUserId(user.userId)
           .then(() => {
+            dispatch(resetNotes());
             setCanRedirect(true);
           })
           .catch((err) => alert(err.message));
@@ -31,7 +33,7 @@ const SettingsAccount = () => {
   const handleDeleteAccount = () => {
     if (canDeleteAccount) {
       const confirmation = confirm(
-        "Are you sure you want to delete your account?"
+        "Are you sure you want to permanently delete your account?"
       );
       if (confirmation) {
         deleteUser(user.userId)

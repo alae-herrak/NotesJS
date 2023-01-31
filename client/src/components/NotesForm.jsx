@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
-import { createNote } from "../api/requests";
+import { useSelector, useDispatch } from "react-redux";
+import { createNote, getNotesOfUserId } from "../api/requests";
+import { addNote, resetNotes } from "../redux/notesSlice";
 
 const NotesForm = () => {
+  const dispatch = useDispatch();
   const user = useSelector((state) => state.user.user);
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
@@ -23,6 +25,10 @@ const NotesForm = () => {
         .then(() => {
           setTitle("");
           setContent("");
+          dispatch(resetNotes());
+          getNotesOfUserId(user.userId).then((res) => {
+            res.data.map((note) => dispatch(addNote(note)));
+          });
         })
         .catch((err) => setErrorMessage(err.message));
     }

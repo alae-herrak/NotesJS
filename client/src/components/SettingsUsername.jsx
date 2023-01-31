@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { getUserByUsername, updateUsername } from "../api/requests";
+import { resetNotes } from "../redux/notesSlice";
 import { disconnect } from "../redux/userSlice";
 
 const SettingsUsername = () => {
@@ -51,6 +52,7 @@ const SettingsUsername = () => {
       if (confirmChange) {
         updateUsername(user.userId, { username: newUsername }).then(() => {
           alert("Please login again to see changes!");
+          dispatch(resetNotes())
           dispatch(disconnect());
         });
       }
