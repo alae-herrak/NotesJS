@@ -15,19 +15,16 @@ _NotesJS_ is a MERN stack application in which you can:
 
 after cloning the repo run:
 
-`
-cd server
 
-npm install
+`cd server`
 
-npm start
-`
+`npm install`
+
+`npm start`
 
 
-`
-cd client
+`cd client`
 
-npm install
+`npm install`
 
-npm run dev
-`
+`npm run dev`
