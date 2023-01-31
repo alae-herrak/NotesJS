@@ -8,5 +8,5 @@ _NotesJS_ is a MERN stack application in which you can:
 *   delete a note
 *   change your username
 *   change your password
-*   delete all you notes (settings>account)
+*   delete all your notes (settings>account)
 *   delete your account
