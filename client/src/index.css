@@ -407,4 +407,5 @@ nav a:hover {
   background-color: #4c966549;
   border-end-start-radius: 10px;
   border-end-end-radius: 10px;
+  white-space: pre-wrap;
 }
