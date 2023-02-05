@@ -26,9 +26,9 @@ const Navbar = () => {
                 dispatch(resetNotes());
               }}
             >
-              Diconnect
+              Logout
             </button>
-          </div>{" "}
+          </div>
         </>
       )}
     </header>
