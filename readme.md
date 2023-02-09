@@ -11,20 +11,17 @@ _NotesJS_ is a MERN stack application in which you can:
 *   delete all your notes (settings>account)
 *   delete your account
 
-### NotesJS was made using Vite (react + javascript)
+### Instructions to run the application
 
-after cloning the repo run:
+After cloning the repo you need to add your MongoDB URL inside the file _.env.example_ and rename it to _.env_
 
-
-`cd server`
+In a terminal positioned in the _server_ folder run:
 
 `npm install`
 
 `npm start`
 
-in another terminal run:
-
-`cd client`
+In another terminal positioned in the _client_ folder run:
 
 `npm install`
 
